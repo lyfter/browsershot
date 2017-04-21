@@ -64,12 +64,8 @@ class Browsershot
     public function getBinPath()
     {
         $binFile = 'phantomjs';
-
-        if (defined('PHP_WINDOWS_VERSION_BUILD')) {
-            $binFile = 'phantomjs.exe';
-        }
-
-        return realpath(dirname(__FILE__).'/../../../bin/'.$binFile);
+     
+        return $binFile;
     }
 
     /**
@@ -255,9 +251,11 @@ class Browsershot
 
         fwrite($tempJsFileHandle, $this->getPhantomJsScript($targetFile));
         $tempFileName = stream_get_meta_data($tempJsFileHandle)['uri'];
-        $cmd = escapeshellcmd("{$this->binPath} --ssl-protocol=any --ignore-ssl-errors=true ".$tempFileName);
-
-        shell_exec($cmd);
+        //$cmd = escapeshellcmd("{$this->binPath} --ssl-protocol=any --ignore-ssl-errors=true ".$tempFileName);
+        //shell_exec($cmd);
+        
+        $cmd = "{$this->binPath} --ssl-protocol=any --ignore-ssl-errors=true ".$tempFileName;
+        exec($cmd);
 
         fclose($tempJsFileHandle);
     }
