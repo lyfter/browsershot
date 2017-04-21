@@ -1,7 +1,7 @@
 {
-    "name": "spatie/browsershot",
+    "name": "lyfter/browsershot",
     "description": "Convert a webpage to an image",
-    "homepage": "https://github.com/spatie/browsershot",
+    "homepage": "https://github.com/lyfter/browsershot",
     "keywords":
         [
             "convert",
@@ -9,8 +9,7 @@
             "image",
             "screenshot",
             "browser",
-            "phantomjs",
-            "laravel"
+            "phantomjs"
         ],
     "license": "MIT",
     "authors": [
@@ -23,10 +22,7 @@
         "php": ">=5.4.0",
         "illuminate/support": "4.*|5.*",
         "intervention/image": "2.*"
-    },
-    "bin": [
-        "bin/phantomjs"
-    ],
+    },   
     "require-dev": {
         "phpspec/phpspec": "~2.1"
     },
