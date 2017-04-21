@@ -219,7 +219,7 @@ class Browsershot
             throw new Exception('url is invalid');
         }
 
-        if (! file_exists($this->binPath)) {
+        if (!file_exists('/usr/local/bin/' . $this->binPath)) {
             throw new Exception('binary does not exist');
         }
 
